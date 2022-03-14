@@ -7,8 +7,8 @@ pipeline:
     tags: {}
     stages:
         - stage:
-              name: dsafadsfdf
-              identifier: dsafadsfdf
+              name: dsafadsfdf1
+              identifier: dsafadsfdf1
               description: ""
               type: Deployment
               spec:
