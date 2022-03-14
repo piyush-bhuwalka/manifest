@@ -1,0 +1,14 @@
+inputSet:
+  identifier: "fsdadsf"
+  name: "fsdadsf"
+  orgIdentifier: "default"
+  projectIdentifier: "sdf"
+  pipeline:
+    identifier: "safddsf123"
+    stages:
+    - stage:
+        identifier: "dsafadsfdf12w"
+        type: "Deployment"
+        spec:
+          serviceConfig:
+            serviceRef: "sfda"
