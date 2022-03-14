@@ -1,6 +1,6 @@
 pipeline:
-    name: safddsf
-    identifier: safddsf
+    name: safddsf123
+    identifier: safddsf123
     allowStageExecutions: false
     projectIdentifier: sdf
     orgIdentifier: default
