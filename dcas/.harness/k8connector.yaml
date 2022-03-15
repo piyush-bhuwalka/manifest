@@ -1,0 +1,17 @@
+connector:
+  name: k8connector
+  identifier: k8connector
+  description:
+  orgIdentifier: default
+  projectIdentifier: sdf
+  type: K8sCluster
+  spec:
+    credential:
+      type: ManualConfig
+      spec:
+        masterUrl: https://34.122.158.209
+        auth:
+          type: UsernamePassword
+          spec:
+            username: admin
+            passwordRef: K8Password
