@@ -33,6 +33,19 @@ pipeline:
                                                         - sfadasfd
                                                     branch: main
                                             skipResourceVersioning: false
+                                  - manifest:
+                                        identifier: ssdfa
+                                        type: K8sManifest
+                                        spec:
+                                            store:
+                                                type: Github
+                                                spec:
+                                                    connectorRef: githubconnector2
+                                                    gitFetchType: Branch
+                                                    paths:
+                                                        - asdf
+                                                    branch: safd
+                                            skipResourceVersioning: false
                               artifacts:
                                   primary:
                                       spec:
