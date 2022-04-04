@@ -1,0 +1,15 @@
+service: <+stage.variables.serviceName>
+frameworkVersion: '2 || 3'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - httpApi:
+          path: /hello
+          method: get    
+plugins:
+  - serverless-deployment-bucket
