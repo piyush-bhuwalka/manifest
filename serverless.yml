@@ -1,15 +1,16 @@
 service: <+stage.variables.serviceName>
-frameworkVersion: '2 || 3'
+frameworkVersion: '3.7.2'
 
 provider:
   name: aws
-  runtime: nodejs12.x
+  runtime: java8
+
+package:
+  artifact: <+artifact.path>
 functions:
-  hello:
-    handler: handler.hello
+  currentTime:
+    handler: com.serverless.Handler
     events:
       - httpApi:
-          path: /hello
-          method: get    
-plugins:
-  - serverless-deployment-bucket
+          path: /time
+          method: get
