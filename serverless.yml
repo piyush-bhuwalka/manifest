@@ -1,5 +1,5 @@
 service: <+stage.variables.serviceName>
-frameworkVersion: '3.7.2'
+frameworkVersion: '2.35.0'
 
 provider:
   name: aws
