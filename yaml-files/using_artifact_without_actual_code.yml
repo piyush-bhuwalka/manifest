@@ -1,0 +1,17 @@
+service: my-project-1
+frameworkVersion: '3.7.2'
+
+provider:
+  name: aws
+  runtime: java8
+
+package:
+  artifact: /Users/piyush.bhuwalka/code-base/my-project-1/build/distributions/aws-java-simple-http-endpoint.zip
+
+functions:
+  currentTime:
+    handler: com.serverless.Handler
+    events:
+      - httpApi:
+          path: /time
+          method: get
