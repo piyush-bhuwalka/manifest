@@ -1,4 +1,4 @@
-service: <+stage.variables.serviceName> 
+service: <+stage.variables.adsfafsd>
 frameworkVersion: '2.35.0'
 
 provider:
