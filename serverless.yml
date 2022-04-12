@@ -12,20 +12,3 @@ functions:
       - httpApi:
           path: /
           method: get
-
-plugins:
-  - serverless-plugin-aws-alerts
-
-custom:
-  alerts:
-    stages:
-      - dev
-    topics:
-      alarm:
-        topic: ${self:service}-alerts-alarm
-        notifications:
-          - protocol: email
-            endpoint: piyush.bhuwalka@harness.io # Change this to your email address
-    alarms:
-      - functionErrors
-      - functionThrottles
