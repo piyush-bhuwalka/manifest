@@ -1,4 +1,4 @@
-service: <+stage.variables.serviceName>
+service: ${secrets.getValue("service-name")}
 frameworkVersion: '2.35.0'
 
 provider:
