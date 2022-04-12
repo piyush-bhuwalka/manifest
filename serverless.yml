@@ -1,4 +1,4 @@
-service: <+stage.variables.serviceName> 
+service: piyush-bh
 frameworkVersion: '2.35.0'
 
 provider:
