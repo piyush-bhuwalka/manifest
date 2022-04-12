@@ -27,6 +27,3 @@ functions:
 layers:
   commonLibs:
     path: first_layer
-
-plugins:
-  - serverless-plugin-tracing
