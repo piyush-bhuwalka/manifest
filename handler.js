@@ -8,5 +8,5 @@ module.exports.hello = async (event, context, callback) => {
 const calculateDate = (datetime, days)=> {
   return moment()
     .add(days, "days")
-    .format("Do MMMM YYYY, h:mm:ss a");
+    .format("ddd, hA");
 };
