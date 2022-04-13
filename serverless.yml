@@ -18,5 +18,4 @@ functions:
  
 layers:
   commonLibs:
-    package:
-      artifact: /Users/piyush.bhuwalka/commonLibs.zip
+    path: first_layer 
