@@ -33,7 +33,7 @@ resources: # CloudFormation template syntax
     usersTable:
       Type: AWS::DynamoDB::Table
       Properties:
-        TableName: usersTable12
+        TableName: ${self:service}-112
         AttributeDefinitions:
           - AttributeName: email
             AttributeType: S
