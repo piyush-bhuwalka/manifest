@@ -13,7 +13,7 @@ functions:
           path: /
           method: get       
       - s3:
-          bucket: praveen--kops-state-store
+          bucket: praveen-lambda
           event: s3:ObjectCreated:*
           existing: true
     layers:
