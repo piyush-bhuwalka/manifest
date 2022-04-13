@@ -1,4 +1,4 @@
-service: <+stage.variables.adsfafsd>
+service: justincase
 frameworkVersion: '2.35.0'
 
 provider:
