@@ -33,7 +33,7 @@ resources: # CloudFormation template syntax
     usersTable:
       Type: AWS::DynamoDB::Table
       Properties:
-        TableName: usersTable
+        TableName: usersTable12
         AttributeDefinitions:
           - AttributeName: email
             AttributeType: S
@@ -47,10 +47,10 @@ resources: # CloudFormation template syntax
 custom:
   alerts:
     stages:
-      - dev
+      - prod
     topics:
       alarm:
-        topic: ${self:service}-alerts-alarm
+        topic: ${self:service}-alerts-alarm12
         notifications:
           - protocol: email
             endpoint: piyush.bhuwalka@harness.io # Change this to your email address
