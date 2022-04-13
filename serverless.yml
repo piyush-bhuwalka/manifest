@@ -4,6 +4,14 @@ frameworkVersion: '2.35.0'
 provider:
   name: aws
   runtime: nodejs14.x
+  tracing: true # enable tracing
+  iamRoleStatements:
+    - Effect: "Allow" # xray permissions (required)
+      Action:
+        - "xray:PutTraceSegments"
+        - "xray:PutTelemetryRecords"
+      Resource:
+        - "*"  
 
 functions:
   hello:
@@ -39,3 +47,17 @@ resources: # CloudFormation template syntax
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
+          
+custom:
+  alerts:
+    stages:
+      - dev
+    topics:
+      alarm:
+        topic: ${self:service}-alerts-alarm
+        notifications:
+          - protocol: email
+            endpoint: piyush.bhuwalka@harness.io # Change this to your email address
+    alarms:
+      - functionErrors
+      - functionThrottles  
