@@ -1,0 +1,51 @@
+pipeline:
+    name: fasdfsda
+    identifier: fasdfsda
+    allowStageExecutions: false
+    stages:
+        - stage:
+              name: fasd
+              identifier: fasd
+              description: ""
+              type: Deployment
+              spec:
+                  serviceConfig:
+                      serviceRef: asfd
+                      serviceDefinition:
+                          type: ServerlessAwsLambda
+                          spec:
+                              variables: []
+                  infrastructure:
+                      environmentRef: fsda
+                      infrastructureDefinition:
+                          type: ServerlessAwsLambda
+                          spec:
+                              connectorRef: account.aws_connector
+                              stage: sdaf
+                              region: dsfa
+                      allowSimultaneousDeployments: false
+                  execution:
+                      steps:
+                          - step:
+                                name: Serverless Aws Lambda Deploy
+                                identifier: ServerlessAwsLambdaDeploy
+                                type: ServerlessAwsLambdaDeploy
+                                timeout: 10m
+                                spec: {}
+                      rollbackSteps:
+                          - step:
+                                name: Serverless Aws Lambda Rollback
+                                identifier: ServerlessAwsLambdaRollback
+                                type: ServerlessAwsLambdaRollback
+                                timeout: 10m
+                                spec: {}
+              tags: {}
+              failureStrategies:
+                  - onFailure:
+                        errors:
+                            - AllErrors
+                        action:
+                            type: StageRollback
+    projectIdentifier: asdfsdf
+    orgIdentifier: default
+    tags: {}
