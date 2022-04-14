@@ -15,6 +15,16 @@ pipeline:
                           type: Kubernetes
                           spec:
                               variables: []
+                              artifacts:
+                                  primary:
+                                      spec:
+                                          connectorRef: account.Artifactory
+                                          artifactPath: fasd
+                                          tag: <+input>
+                                          repository: asdf
+                                          repositoryUrl: afsd
+                                          repositoryFormat: docker
+                                      type: ArtifactoryRegistry
                   infrastructure:
                       environmentRef: fsda
                       infrastructureDefinition:
