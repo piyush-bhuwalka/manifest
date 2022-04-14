@@ -14,7 +14,10 @@ pipeline:
                       serviceDefinition:
                           type: ServerlessAwsLambda
                           spec:
-                              variables: []
+                              variables:
+                                  - name: vsd
+                                    type: String
+                                    value: sadf
                               manifests:
                                   - manifest:
                                         identifier: afsdf
