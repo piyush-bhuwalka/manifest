@@ -15,14 +15,27 @@ pipeline:
                           type: ServerlessAwsLambda
                           spec:
                               variables: []
+                              manifests:
+                                  - manifest:
+                                        identifier: afsdf
+                                        type: ServerlessAwsLambda
+                                        spec:
+                                            store:
+                                                type: Github
+                                                spec:
+                                                    connectorRef: github
+                                                    gitFetchType: Branch
+                                                    paths:
+                                                        - /
+                                                    branch: main
                   infrastructure:
                       environmentRef: fsda
                       infrastructureDefinition:
                           type: ServerlessAwsLambda
                           spec:
                               connectorRef: account.aws_connector
-                              stage: sdaf
-                              region: dsfa
+                              stage: prod
+                              region: us-east-1
                       allowSimultaneousDeployments: false
                   execution:
                       steps:
