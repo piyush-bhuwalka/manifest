@@ -1,0 +1,21 @@
+inputSet:
+  identifier: "fdsasf"
+  pipeline:
+    identifier: "k8overridd"
+    stages:
+    - stage:
+        identifier: "fasd"
+        type: "Deployment"
+        spec:
+          serviceConfig:
+            serviceDefinition:
+              type: "Kubernetes"
+              spec:
+                artifacts:
+                  primary:
+                    type: "ArtifactoryRegistry"
+                    spec:
+                      tag: "afsd"
+  name: "fdsasf"
+  orgIdentifier: "default"
+  projectIdentifier: "asdfsdf"
