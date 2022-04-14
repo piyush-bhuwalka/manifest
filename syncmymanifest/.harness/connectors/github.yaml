@@ -1,0 +1,22 @@
+connector:
+  name: github
+  identifier: github
+  description:
+  orgIdentifier: default
+  projectIdentifier: asdfsdf
+  type: Github
+  spec:
+    url: https://github.com/piyush-bhuwalka/manifest
+    authentication:
+      type: Http
+      spec:
+        type: UsernameToken
+        spec:
+          username: piyush-bhuwalka
+          tokenRef: githuballaccess
+    apiAccess:
+      type: Token
+      spec:
+        tokenRef: githuballaccess
+    executeOnDelegate: false
+    type: Repo
