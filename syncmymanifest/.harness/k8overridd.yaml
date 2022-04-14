@@ -22,7 +22,7 @@ pipeline:
                                           artifactPath: fasd
                                           tag: <+input>
                                           repository: asdf
-                                          repositoryUrl: afsd
+                                          repositoryUrl: <+input>
                                           repositoryFormat: docker
                                       type: ArtifactoryRegistry
                   infrastructure:
