@@ -33,7 +33,7 @@ pipeline:
                                       spec:
                                           connectorRef: account.Artifactory
                                           artifactDirectory: <+input>
-                                          artifactPath: <+input>
+                                          artifactPathFilter: <+input>
                                           repository: <+input>
                                           repositoryFormat: generic
                                       type: ArtifactoryRegistry
