@@ -44,8 +44,9 @@ pipeline:
                                 name: Serverless Aws Lambda Deploy
                                 identifier: ServerlessAwsLambdaDeploy
                                 type: ServerlessAwsLambdaDeploy
-                                timeout: 1m
-                                spec: {}
+                                timeout: 10m
+                                spec:
+                                    commandOptions: ""
                       rollbackSteps:
                           - step:
                                 name: Serverless Aws Lambda Rollback
