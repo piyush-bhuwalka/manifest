@@ -28,7 +28,15 @@ pipeline:
                                                     paths:
                                                         - /
                                                     branch: main
-                              artifacts: {}
+                              artifacts:
+                                  primary:
+                                      spec:
+                                          connectorRef: account.Artifactory
+                                          artifactDirectory: <+input>
+                                          artifactPath: <+input>
+                                          repository: <+input>
+                                          repositoryFormat: generic
+                                      type: ArtifactoryRegistry
                   infrastructure:
                       environmentRef: fsda
                       infrastructureDefinition:
