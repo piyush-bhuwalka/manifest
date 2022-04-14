@@ -1,0 +1,23 @@
+inputSet:
+  identifier: "dsf"
+  pipeline:
+    identifier: "fasdfsda"
+    stages:
+    - stage:
+        identifier: "fasd"
+        type: "Deployment"
+        spec:
+          serviceConfig:
+            serviceDefinition:
+              type: "ServerlessAwsLambda"
+              spec:
+                artifacts:
+                  primary:
+                    type: "ArtifactoryRegistry"
+                    spec:
+                      artifactDirectory: "/"
+                      artifactPathFilter: "aws-java-simple-http-e?dpoint.zip"
+                      repository: "lambda"
+  name: "dsf"
+  orgIdentifier: "default"
+  projectIdentifier: "asdfsdf"
