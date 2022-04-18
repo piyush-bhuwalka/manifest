@@ -74,6 +74,18 @@ pipeline:
                             - AllErrors
                         action:
                             type: StageRollback
+                  - onFailure:
+                        errors:
+                            - Unknown
+                        action:
+                            type: Retry
+                            spec:
+                                retryCount: 1
+                                retryIntervals:
+                                    - 30s
+                                onRetryFailure:
+                                    action:
+                                        type: StageRollback
         - stage:
               name: asdafsd
               identifier: asdafsd
