@@ -1,0 +1,136 @@
+pipeline:
+    name: sainath
+    identifier: sainath
+    allowStageExecutions: false
+    stages:
+        - stage:
+              name: fasd
+              identifier: fasd
+              description: ""
+              type: Deployment
+              spec:
+                  serviceConfig:
+                      serviceRef: asfd
+                      serviceDefinition:
+                          type: ServerlessAwsLambda
+                          spec:
+                              variables:
+                                  - name: vsd
+                                    type: String
+                                    value: sadf
+                              manifests:
+                                  - manifest:
+                                        identifier: afsdf
+                                        type: ServerlessAwsLambda
+                                        spec:
+                                            store:
+                                                type: Github
+                                                spec:
+                                                    connectorRef: github
+                                                    gitFetchType: Branch
+                                                    paths:
+                                                        - /
+                                                    branch: main
+                                            configOverridePath: ""
+                              artifacts:
+                                  primary:
+                                      spec:
+                                          connectorRef: account.Artifactory
+                                          artifactDirectory: <+input>
+                                          artifactPathFilter: <+input>
+                                          repository: <+input>
+                                          repositoryFormat: generic
+                                      type: ArtifactoryRegistry
+                  infrastructure:
+                      environmentRef: fsda
+                      infrastructureDefinition:
+                          type: ServerlessAwsLambda
+                          spec:
+                              connectorRef: account.aws_connector
+                              stage: prod
+                              region: us-east-1
+                      allowSimultaneousDeployments: false
+                  execution:
+                      steps:
+                          - step:
+                                name: Serverless Aws Lambda Deploy
+                                identifier: ServerlessAwsLambdaDeploy
+                                type: ServerlessAwsLambdaDeploy
+                                timeout: 10m
+                                spec:
+                                    commandOptions: ""
+                                failureStrategies: []
+                      rollbackSteps:
+                          - step:
+                                name: Serverless Aws Lambda Rollback
+                                identifier: ServerlessAwsLambdaRollback
+                                type: ServerlessAwsLambdaRollback
+                                timeout: 2m
+                                spec: {}
+              tags: {}
+              failureStrategies:
+                  - onFailure:
+                        errors:
+                            - AllErrors
+                        action:
+                            type: StageRollback
+        - stage:
+              name: asdafsd
+              identifier: asdafsd
+              description: ""
+              type: Deployment
+              spec:
+                  serviceConfig:
+                      serviceRef: asfd
+                      serviceDefinition:
+                          type: ServerlessAwsLambda
+                          spec:
+                              variables: []
+                              manifests:
+                                  - manifest:
+                                        identifier: dsfasdf
+                                        type: ServerlessAwsLambda
+                                        spec:
+                                            store:
+                                                type: Github
+                                                spec:
+                                                    connectorRef: github
+                                                    gitFetchType: Branch
+                                                    paths:
+                                                        - /
+                                                    branch: main
+                  infrastructure:
+                      environmentRef: fsda
+                      infrastructureDefinition:
+                          type: ServerlessAwsLambda
+                          spec:
+                              connectorRef: account.aws_connector
+                              stage: prod
+                              region: us-east-1
+                      allowSimultaneousDeployments: false
+                  execution:
+                      steps:
+                          - step:
+                                name: Serverless Aws Lambda Deploy
+                                identifier: ServerlessAwsLambdaDeploy
+                                type: ServerlessAwsLambdaDeploy
+                                timeout: 10m
+                                spec:
+                                    commandOptions: ""
+                      rollbackSteps:
+                          - step:
+                                name: Serverless Aws Lambda Rollback
+                                identifier: ServerlessAwsLambdaRollback
+                                type: ServerlessAwsLambdaRollback
+                                timeout: 10m
+                                spec: {}
+              tags: {}
+              failureStrategies:
+                  - onFailure:
+                        errors:
+                            - AllErrors
+                        action:
+                            type: StageRollback
+    projectIdentifier: asdfsdf
+    orgIdentifier: default
+    tags: {}
