@@ -59,6 +59,7 @@ pipeline:
                                 timeout: 4m
                                 spec:
                                     commandOptions: ""
+                                failureStrategies: []
                       rollbackSteps:
                           - step:
                                 name: Serverless Aws Lambda Rollback
