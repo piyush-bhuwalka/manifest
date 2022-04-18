@@ -10,8 +10,6 @@ provider:
       Action:
         - "xray:PutTraceSegments"
         - "xray:PutTelemetryRecords"
-      Resource:
-        - "*"  
 
 functions:
   hello:
@@ -28,32 +26,19 @@ layers:
   commonLibs:
     path: first_layer
 
-resources: # CloudFormation template syntax
-  Resources:
-    usersTable:
-      Type: AWS::DynamoDB::Table
-      Properties:
-        TableName: ${self:service}-112
-        AttributeDefinitions:
-          - AttributeName: email
-            AttributeType: S
-        KeySchema:
-          - AttributeName: email
-            KeyType: HASH
-        ProvisionedThroughput:
-          ReadCapacityUnits: 1
-          WriteCapacityUnits: 1
-          
+plugins:
+  - serverless-plugin-aws-alerts
+
 custom:
   alerts:
     stages:
-      - prod
+      - dev
     topics:
       alarm:
-        topic: ${self:service}-alerts-alarm12
+        topic: ${self:service}-alerts-alarm
         notifications:
           - protocol: email
             endpoint: piyush.bhuwalka@harness.io # Change this to your email address
     alarms:
       - functionErrors
-      - functionThrottles  
+      - functionThrottles
