@@ -32,7 +32,7 @@ plugins:
 custom:
   alerts:
     stages:
-      - dev
+      - prod
     topics:
       alarm:
         topic: ${self:service}-alerts-alarm
