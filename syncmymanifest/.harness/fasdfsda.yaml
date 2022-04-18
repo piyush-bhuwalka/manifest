@@ -29,9 +29,9 @@ pipeline:
                                                     connectorRef: github
                                                     gitFetchType: Branch
                                                     paths:
-                                                        - /yaml-files
+                                                        - /
                                                     branch: main
-                                            configOverridePath: s3_event.yml
+                                            configOverridePath: ""
                               artifacts:
                                   primary:
                                       spec:
