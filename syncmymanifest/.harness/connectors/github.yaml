@@ -18,5 +18,7 @@ connector:
       type: Token
       spec:
         tokenRef: githuballaccess
+    delegateSelectors:
+    - account-delegate-1647503982
     executeOnDelegate: true
     type: Repo
