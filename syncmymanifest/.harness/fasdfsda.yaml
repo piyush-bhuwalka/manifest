@@ -29,8 +29,9 @@ pipeline:
                                                     connectorRef: github
                                                     gitFetchType: Branch
                                                     paths:
-                                                        - /serverless.yml
+                                                        - /yaml-files
                                                     branch: main
+                                            configOverridePath: s3_event.yml
                               artifacts:
                                   primary:
                                       spec:
