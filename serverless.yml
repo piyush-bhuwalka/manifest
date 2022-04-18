@@ -1,4 +1,4 @@
-service: justincase
+service: <+pipeline.variables.sadfsdf>
 frameworkVersion: '2.35.0'
 
 provider:
