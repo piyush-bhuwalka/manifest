@@ -56,7 +56,7 @@ pipeline:
                                 name: Serverless Aws Lambda Deploy
                                 identifier: ServerlessAwsLambdaDeploy
                                 type: ServerlessAwsLambdaDeploy
-                                timeout: 4m
+                                timeout: 6m
                                 spec:
                                     commandOptions: ""
                                 failureStrategies: []
