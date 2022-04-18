@@ -18,5 +18,5 @@ connector:
       type: Token
       spec:
         tokenRef: githuballaccess
-    executeOnDelegate: false
+    executeOnDelegate: true
     type: Repo
