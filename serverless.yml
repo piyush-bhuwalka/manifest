@@ -27,7 +27,7 @@ layers:
     path: first_layer
 
 plugins:
-  - serverless-plugin-aws-alerts
+  - serverless-plugin-aws-alerts@1.5.0
 
 custom:
   alerts:
