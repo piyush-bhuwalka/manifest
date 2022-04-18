@@ -29,7 +29,7 @@ pipeline:
                                                     connectorRef: github
                                                     gitFetchType: Branch
                                                     paths:
-                                                        - /
+                                                        - /serverless.yml
                                                     branch: main
                               artifacts:
                                   primary:
