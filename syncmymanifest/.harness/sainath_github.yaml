@@ -1,0 +1,17 @@
+connector:
+  name: sainath github
+  identifier: sainath_github
+  orgIdentifier: default
+  projectIdentifier: asdfsdf
+  type: Github
+  spec:
+    url: https://github.com/wings-software/Sainath-Test/
+    authentication:
+      type: Http
+      spec:
+        type: UsernameToken
+        spec:
+          username: sainath.batthala@harness.io
+          tokenRef: github_sainath_PAT
+    executeOnDelegate: true
+    type: Repo
