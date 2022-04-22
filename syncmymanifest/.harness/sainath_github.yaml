@@ -13,5 +13,7 @@ connector:
         spec:
           username: sainath.batthala@harness.io
           tokenRef: github_sainath_PAT
+    delegateSelectors:
+    - account-delegate-1647503982
     executeOnDelegate: true
     type: Repo
