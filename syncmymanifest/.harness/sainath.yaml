@@ -36,9 +36,9 @@ pipeline:
                                   primary:
                                       spec:
                                           connectorRef: account.Artifactory
-                                          artifactDirectory: <+input>
-                                          artifactPathFilter: <+input>
-                                          repository: <+input>
+                                          artifactDirectory: /
+                                          artifactPath: todolist_zip.zip
+                                          repository: todolist-zip
                                           repositoryFormat: generic
                                       type: ArtifactoryRegistry
                   infrastructure:
@@ -47,19 +47,52 @@ pipeline:
                           type: ServerlessAwsLambda
                           spec:
                               connectorRef: account.aws_connector
-                              stage: prod
-                              region: us-east-1
+                              stage: instance-sync-test-sainath
+                              region: us-east-2
                       allowSimultaneousDeployments: false
                   execution:
                       steps:
                           - step:
-                                name: Serverless Aws Lambda Deploy
-                                identifier: ServerlessAwsLambdaDeploy
-                                type: ServerlessAwsLambdaDeploy
+                                type: ShellScript
+                                name: Delegate Serverless Install
+                                identifier: Delegate_Serverless_Install
+                                spec:
+                                    shell: Bash
+                                    onDelegate: true
+                                    source:
+                                        type: Inline
+                                        spec:
+                                            script: |-
+                                                #!/bin/bash
+                                                echo "Start"
+                                                export DEBIAN_FRONTEND=noninteractive
+                                                echo "non-inte"
+                                                apt-get update
+                                                echo "updagte"
+                                                apt install -yq npm
+                                                echo "npm"
+                                                npm install -g serverless@v2.35.0
+                                                echo "Done"
+                                    environmentVariables: []
+                                    outputVariables: []
+                                    executionTarget: {}
+                                    delegateSelectors:
+                                        - account-delegate-1647503982
                                 timeout: 10m
+                                failureStrategies: []
+                          - step:
+                                name: Serverless Aws Lambda Deploy
+                                identifier: Serverless_Aws_Lambda_Deploy
+                                type: ServerlessAwsLambdaDeploy
+                                timeout: 3m
                                 spec:
                                     commandOptions: ""
-                                failureStrategies: []
+                                failureStrategies:
+                                    - onFailure:
+                                          errors:
+                                              - AllErrors
+                                          action:
+                                              type: StageRollback
                       rollbackSteps:
                           - step:
                                 name: Serverless Aws Lambda Rollback
@@ -67,6 +100,7 @@ pipeline:
                                 type: ServerlessAwsLambdaRollback
                                 timeout: 2m
                                 spec: {}
+                  serviceDependencies: []
               tags: {}
               failureStrategies:
                   - onFailure:
@@ -74,75 +108,7 @@ pipeline:
                             - AllErrors
                         action:
                             type: StageRollback
-                  - onFailure:
-                        errors:
-                            - Unknown
-                        action:
-                            type: Retry
-                            spec:
-                                retryCount: 1
-                                retryIntervals:
-                                    - 30s
-                                onRetryFailure:
-                                    action:
-                                        type: StageRollback
-        - stage:
-              name: asdafsd
-              identifier: asdafsd
-              description: ""
-              type: Deployment
-              spec:
-                  serviceConfig:
-                      serviceRef: asfd
-                      serviceDefinition:
-                          type: ServerlessAwsLambda
-                          spec:
-                              variables: []
-                              manifests:
-                                  - manifest:
-                                        identifier: dsfasdf
-                                        type: ServerlessAwsLambda
-                                        spec:
-                                            store:
-                                                type: Github
-                                                spec:
-                                                    connectorRef: github
-                                                    gitFetchType: Branch
-                                                    paths:
-                                                        - /
-                                                    branch: main
-                  infrastructure:
-                      environmentRef: fsda
-                      infrastructureDefinition:
-                          type: ServerlessAwsLambda
-                          spec:
-                              connectorRef: account.aws_connector
-                              stage: prod
-                              region: us-east-1
-                      allowSimultaneousDeployments: false
-                  execution:
-                      steps:
-                          - step:
-                                name: Serverless Aws Lambda Deploy
-                                identifier: ServerlessAwsLambdaDeploy
-                                type: ServerlessAwsLambdaDeploy
-                                timeout: 10m
-                                spec:
-                                    commandOptions: ""
-                      rollbackSteps:
-                          - step:
-                                name: Serverless Aws Lambda Rollback
-                                identifier: ServerlessAwsLambdaRollback
-                                type: ServerlessAwsLambdaRollback
-                                timeout: 10m
-                                spec: {}
-              tags: {}
-              failureStrategies:
-                  - onFailure:
-                        errors:
-                            - AllErrors
-                        action:
-                            type: StageRollback
+              delegateSelectors: []
     projectIdentifier: asdfsdf
     orgIdentifier: default
     tags: {}
