@@ -57,10 +57,6 @@ provider:
 #  hello:
 #    image:
 #      name: appimage
-
-functions:
-  hello:
-    image: <+artifact.image>
     
 functions:
   hello:
