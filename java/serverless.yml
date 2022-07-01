@@ -6,7 +6,7 @@ provider:
   runtime: java8
 
 package:
-  artifact: <+artifact.image>
+  artifact: <+sidecar.artifact.dfsasdfasd>
 
 functions:
   currentTime:
