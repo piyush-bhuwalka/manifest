@@ -1,0 +1,23 @@
+service: my-project-134fadsa
+frameworkVersion: '2.35.0'
+
+provider:
+  name: aws
+  runtime: java8
+
+package:
+  artifact: <+sidecar.artifact.dfsasdfasd>
+
+functions:
+  currentTime:
+    handler: com.serverless.Handler
+    events:
+      - httpApi:
+          path: /time
+          method: get
+  currentTime1:
+    handler: com.serverless.Handler
+    events:
+      - httpApi:
+          path: /time1
+          method: get          
