@@ -1,0 +1,17 @@
+service: my-project-134fadsaez
+frameworkVersion: '2.35.0'
+
+provider:
+  name: aws
+  runtime: java8
+
+package:
+  artifact: <+sidecar.artifact.second>
+  
+functions:
+  currentTime:
+    handler: com.serverless.Handler
+    events:
+      - httpApi:
+          path: /time
+          method: get
