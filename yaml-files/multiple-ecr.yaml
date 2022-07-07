@@ -60,7 +60,7 @@ provider:
     
 functions:
   hello:
-    image: <+sidecar.artifact.second>
+    image: <+artifact.image>
   hello1:
     image: <+sidecar.artifact.first>
 #    The following are a few example events you can configure
