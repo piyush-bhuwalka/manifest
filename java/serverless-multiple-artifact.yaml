@@ -22,4 +22,4 @@ functions:
 layers:
   commonLibs:
     package:
-      artifact: <+sidecar.artifact.second>
+      artifact: <+artifacts.sidecars.second>
