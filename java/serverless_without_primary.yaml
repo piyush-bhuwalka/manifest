@@ -6,7 +6,7 @@ provider:
   runtime: java8
 
 package:
-  artifact: <+sidecar.artifact.second>
+  artifact: <+artifacts.sidecars.second>
   
 functions:
   currentTime:
