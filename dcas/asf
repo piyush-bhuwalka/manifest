@@ -2,5 +2,3 @@
 applications:
 - name: APP-ONE
   path: ./APP-ONE-DIRECTORY
-- name: APP-TWO
-  path: ./APP-TWO-DIRECTORY
