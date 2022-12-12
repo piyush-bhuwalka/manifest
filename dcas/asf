@@ -1,4 +1,8 @@
 ---
 applications:
 - name: APP-ONE
-  path: ./APP-ONE-DIRECTORY
+  instances: 1
+  memory: 250M
+  routes:
+    - route: rishabh_basic_app.apps.pcf-harness.com
+     
