@@ -1,8 +1,4 @@
 {
-   "code": { 
-      "s3Bucket": "sainathlambda",
-      "s3Key": "lamnda-cg-test.zip"
-   },
    "runtime": "nodejs16.x",
    "functionName": "test-lambda-1",
    "handler": "handler",
