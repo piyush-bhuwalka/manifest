@@ -1,6 +1,10 @@
 {
+   "code": { 
+      "s3Bucket": "sainathlambda",
+      "s3Key": "lamnda-cg-test.zip"
+   },
    "runtime": "nodejs16.x",
-   "functionName": "test-lambda-1",
+   "functionName": "test-lambda-2",
    "handler": "handler",
    "role": "arn:aws:iam::806630305776:role/service-role/avengers-test-role-ypjbn4a8"
 }
