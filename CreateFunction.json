@@ -1,5 +1,5 @@
 {
-   "runtime": "nodejs14.x",
+   "runtime": "nodejs16.x",
    "functionName": "test-lambda-29",
    "handler": "handler",
    "role": "arn:aws:iam::806630305776:role/service-role/avengers-test-role-ypjbn4a8"
