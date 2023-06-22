@@ -1,4 +1,4 @@
-service: my-project-1
+service: newprojectpiyush
 frameworkVersion: '3.30.1'
 
 provider:
