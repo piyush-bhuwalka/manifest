@@ -5,6 +5,9 @@ provider:
   name: aws
   runtime: java8
 
+package:
+  artifact: <+artifact.image>  
+
 functions:
   currentTime:
     handler: com.serverless.Handler
