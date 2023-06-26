@@ -1,4 +1,4 @@
-service: newprojectpiyush
+service: {{ .Values.serviceName }}
 frameworkVersion: '3.30.1'
 
 provider:
