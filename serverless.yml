@@ -6,7 +6,7 @@ provider:
   runtime: java8
 
 package:
-  artifact: <+artifact.image>  
+  artifact: <+artifact.path>  
 
 functions:
   currentTime:
