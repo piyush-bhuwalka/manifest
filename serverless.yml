@@ -5,8 +5,8 @@ provider:
   name: aws
   runtime: java8
 
-package:
-  artifact: <+artifact.path>  
+# package:
+#   artifact: <+artifact.path>  
 
 functions:
   currentTime:
