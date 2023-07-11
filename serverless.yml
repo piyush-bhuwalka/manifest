@@ -11,7 +11,7 @@ provider:
 functions:
   currentTime:
     handler: com.serverless.Handler
-    # image: <+artifact.image>
+    image: <+artifact.image>
     events:
       - httpApi:
           path: /time
