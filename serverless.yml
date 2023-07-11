@@ -10,7 +10,7 @@ provider:
 
 functions:
   currentTime:
-    handler: com.serverless.Handler
+    # handler: com.serverless.Handler
     image: <+artifact.image>
     events:
       - httpApi:
