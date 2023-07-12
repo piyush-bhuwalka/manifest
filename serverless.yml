@@ -5,13 +5,13 @@ provider:
   name: aws
   runtime: java8
 
-# package:
-#   artifact: <+artifact.path>  
+package:
+  artifact: <+artifact.path>  
 
 functions:
   currentTime:
-    # handler: com.serverless.Handler
-    image: <+artifact.image>
+    handler: com.serverless.Handler
+    # image: <+artifact.image>
     events:
       - httpApi:
           path: /time
