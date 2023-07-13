@@ -1,5 +1,5 @@
 service: myownchecknew
-frameworkVersion: '3.30.1'
+frameworkVersion: '2.35.0'
 
 provider:
   name: aws
