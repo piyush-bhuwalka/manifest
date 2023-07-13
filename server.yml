@@ -1,5 +1,5 @@
-service: myownchecknewagain
-frameworkVersion: '2.35.0'
+service: myownchecknewagainyes
+frameworkVersion: '3.30.1'
 
 provider:
   name: aws
@@ -9,14 +9,14 @@ provider:
 #   artifact: <+artifact.path>  
 
 functions:
-  currentTime2:
+  currentTime2new:
     # handler: com.serverless.Handler
     image: <+artifact.image>
     events:
       - httpApi:
           path: /time
           method: get
-  currentTime3:
+  currentTime3new:
     # handler: com.serverless.Handler
     image: <+artifact.image>
     events:
