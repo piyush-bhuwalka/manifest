@@ -1,0 +1,25 @@
+service: myownchecknew
+frameworkVersion: '3.30.1'
+
+provider:
+  name: aws
+  runtime: java8
+
+# package:
+#   artifact: <+artifact.path>  
+
+functions:
+  currentTime2:
+    # handler: com.serverless.Handler
+    image: <+artifact.image>
+    events:
+      - httpApi:
+          path: /time
+          method: get
+  currentTime3:
+    # handler: com.serverless.Handler
+    image: <+artifact.image>
+    events:
+      - httpApi:
+          path: /time1
+          method: get  
