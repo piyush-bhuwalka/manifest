@@ -1,4 +1,4 @@
-service: myownchecknew
+service: myownchecknewagain
 frameworkVersion: '2.35.0'
 
 provider:
