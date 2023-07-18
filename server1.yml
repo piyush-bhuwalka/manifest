@@ -13,6 +13,7 @@ functions:
     # handler: com.serverless.Handler
     image: <+artifact.image>
     events:
+      - schedule: ${file(./myCustomFile.yml):globalSchedule}     
       - httpApi:
           path: /time
           method: get
