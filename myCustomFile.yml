@@ -1,1 +1,1 @@
-	globalSchedule: rate(10 minutes)
+globalSchedule: rate(10 minutes)
