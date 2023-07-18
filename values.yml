@@ -1,1 +1,1 @@
-serviceName: <+pipeline.variables.serviceName>
+serviceName: <+pipeline.variables.serviceNameNew>
