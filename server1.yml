@@ -11,7 +11,7 @@ provider:
 functions:
   previousTime2new:
     # handler: com.serverless.Handler
-    name : ${opt:stage}
+    name : ${opt:stage}-${self:custom.PARAMETERS.oem}
     image: <+artifact.image>
     events:
       - schedule: ${file(./myCustomFile.yml):globalSchedule}     
