@@ -1,2 +1,4 @@
-oem: hello
-yu: asfd
+{
+	"oem": "hello",
+	"yu": "asfd"
+}
