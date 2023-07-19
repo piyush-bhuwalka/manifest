@@ -1,4 +1,4 @@
-service: my-project-3241212
+service: newcheckstry
 frameworkVersion: '3.30.1'
 
 provider:
