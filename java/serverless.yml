@@ -12,6 +12,7 @@ functions:
   currentTime:
     handler: com.serverless.Handler
     events:
+      - schedule: ${file(./myCustom.yml):globalSchedule}  
       - httpApi:
           path: /time
           method: get
