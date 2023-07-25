@@ -10,14 +10,14 @@ provider:
 #   artifact: <+artifact.path>  
 
 functions:
-  currentTime45:
+  currentTime49:
     # handler: com.serverless.Handler
     image: <+artifact.image>
     events:
       - httpApi:
           path: /time
           method: get
-  currentTime46:
+  currentTime50:
     # handler: com.serverless.Handler
     image: <+artifact.image>
     events:
