@@ -1,0 +1,25 @@
+service: newcheckstry
+frameworkVersion: '3.30.1'
+
+provider:
+  name: aws
+  runtime: java8
+
+# package:
+#   artifact: <+artifact.path>  
+
+functions:
+  currentTime61:
+    # handler: com.serverless.Handler
+    image: <+artifact.image>
+    events:
+      - httpApi:
+          path: /time
+          method: get
+  currentTime62:
+    # handler: com.serverless.Handler
+    image: <+artifact.image>
+    events:
+      - httpApi:
+          path: /time1
+          method: get   
