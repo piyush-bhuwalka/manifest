@@ -15,6 +15,7 @@ functions:
     image: <+artifact.image>
     environment:
       APIG_DEPLOYMENT_ID: ApiGatewayDeployment${sls:instanceId}
+      ACCOUNT_ID: ${aws:accountId}
     events:
       - schedule: ${file(./myCustomFile.yml):globalSchedule}     
       - httpApi:
