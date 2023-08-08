@@ -27,6 +27,8 @@ functions:
       - httpApi:
           path: /time1
           method: get  
+#      - s3: ${env:BUCKET}
+          
 
 custom:
   DEFAULT_ENV_SETUP: devint
