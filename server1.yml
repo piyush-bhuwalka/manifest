@@ -1,4 +1,5 @@
 service: newcheckstryvf
+variableResolutionMode: 20210326
 frameworkVersion: '2.35.0'
 
 provider:
