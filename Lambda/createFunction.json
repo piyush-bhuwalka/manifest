@@ -1,0 +1,5 @@
+{
+   "runtime": "nodejs16.x",
+   "functionName": "auto-lambda",
+   "handler": "handler.hello"
+}
