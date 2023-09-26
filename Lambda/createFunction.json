@@ -1,5 +1,4 @@
 {
-   "runtime": "nodejs16.x",
    "functionName": "auto-lambda-new-new",
    "handler": "handler.hello",
    "role": "arn:aws:iam::806630305776:role/pluginroletestcf"
