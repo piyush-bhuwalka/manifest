@@ -14,10 +14,7 @@ for (( i=0; i<2; ++i)); do
 done
 
 echo "HARNESS_PLUGIN_INFRA_DIR is : $HARNESS_PLUGIN_INFRA_DIR"
-HARNESS_PLUGIN_SYSTEM_DIR=${HARNESS_PLUGIN_INFRA_DIR}/system
-source $HARNESS_PLUGIN_SYSTEM_DIR/scripts/bash-commons/assert.sh
-source $HARNESS_PLUGIN_SYSTEM_DIR/scripts/bash-commons/log.sh
-source $HARNESS_PLUGIN_SYSTEM_DIR/scripts/bash-commons/string.sh
+HARNESS_PLUGIN_SYSTEM_DIR=${HARNESS_PLUGIN_INFRA_DIR}
 
 # Defaults to the latest commit SHA
 if [[ -z $COMMIT_SHA ]]; then
@@ -47,11 +44,11 @@ if [ -n "$LATEST_TAG" ]; then
     echo "VERSION is $VERSION"
     if [ "$RELEASE_TYPE" == "MINOR" ]; then
         # Normal release: Increment the MINOR version by 1
-        NEW_VERSION=$($HARNESS_PLUGIN_SYSTEM_DIR/scripts/utils/increment_version.sh -m ${VERSION})
+        NEW_VERSION=$($HARNESS_PLUGIN_SYSTEM_DIR/utils/increment_version.sh -m ${VERSION})
         echo "NEW_VERSION is $NEW_VERSION"
     elif [ "$RELEASE_TYPE" == "PATCH" ]; then
         # Hotfix: Increment the PATCH version by 1
-        NEW_VERSION=$($HARNESS_PLUGIN_SYSTEM_DIR/scripts/utils/increment_version.sh -p ${VERSION})
+        NEW_VERSION=$($HARNESS_PLUGIN_SYSTEM_DIR/utils/increment_version.sh -p ${VERSION})
     else
         echo "do nothing"
         exit 1
