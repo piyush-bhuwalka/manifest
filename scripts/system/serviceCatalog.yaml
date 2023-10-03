@@ -1,0 +1,385 @@
+---
+# ensure add services in alphabetical order of service name
+access-control:
+  repo: https://github.com/harness/harness-core
+  manifest: access-control/config/manifest.yaml
+  defaultBranch: develop
+  module: [platform]
+  dependsOn: [harness-manager, ng-manager, platform-service]
+anomaly-detection:
+  repo: https://github.com/wings-software/ce-anomalyDetection
+  manifest: config/manifest.yaml
+  defaultBranch: main
+  module: [ccm]
+  dependsOn: [ng-manager]
+batch-processing:
+  repo: https://github.com/harness/harness-core
+  manifest: batch-processing/config/manifest.yaml
+  defaultBranch: develop
+  module: [ccm]
+  dependsOn: [ng-manager]
+bootstrap:
+  repo: https://github.com/harness/harness-core
+  manifest: charts/config/bootstrap/manifest.yaml
+  defaultBranch: develop
+  module: [ccm, cd, cet, chaos, ci, ff, platform, srm, sto, code-standalone, code]
+  dependsOn: 
+  waitForDeployment: false
+ce-nextgen:
+  repo: https://github.com/harness/harness-core
+  manifest: ce-nextgen/config/manifest.yaml
+  defaultBranch: develop
+  module: [ccm]
+  dependsOn: [ng-manager]
+change-data-capture:
+  repo: https://github.com/harness/harness-core
+  manifest: 110-change-data-capture/config/manifest.yaml
+  defaultBranch: develop
+  module:
+  dependsOn: [harness-manager]
+chaos-common:
+  repo: https://github.com/harness/hce-saas
+  manifest: chart/config/chaos-common/manifest.yaml
+  defaultBranch: main
+  module: [chaos]
+  dependsOn: [ng-manager]
+chaos-k8s-ifs:
+  repo: https://github.com/harness/hce-saas
+  manifest: k8s-infrastructure-server/config/manifest.yaml
+  defaultBranch: main
+  module: [chaos]
+  dependsOn: [ng-manager]
+chaos-linux-ifc:
+  repo: https://github.com/wings-software/linux-chaos
+  manifest: infrastructure-controller/config/manifest.yaml
+  defaultBranch: main
+  module: [chaos]
+  dependsOn: [ng-manager]
+chaos-linux-ifs:
+  repo: https://github.com/wings-software/linux-chaos
+  manifest: infrastructure-server/config/manifest.yaml
+  defaultBranch: main
+  module: [chaos]
+  dependsOn: [ng-manager]
+chaos-manager:
+  repo: https://github.com/harness/hce-saas
+  manifest: graphql/server/config/manifest.yaml
+  defaultBranch: main
+  module: [chaos]
+  dependsOn: [ng-manager]
+chaos-web:
+  repo: https://github.com/harness/hce-saas
+  manifest: web/config/manifest.yaml
+  defaultBranch: main
+  module: [chaos]
+  dependsOn: [ng-manager]
+ci-manager:
+  repo: https://github.com/harness/harness-core
+  manifest: 332-ci-manager/config/manifest.yaml
+  defaultBranch: develop
+  module: [ci, sto]
+  dependsOn: [harness-manager]
+cloud-info:
+  repo: https://github.com/wings-software/cloudinfo
+  manifest: configs/manifest.yaml
+  defaultBranch: master
+  module: [ccm]
+  dependsOn: [ng-manager]
+code-api:
+  repo: https://github.com/wings-software/harness-code
+  manifest: tools/code-api/config/manifest.yaml
+  defaultBranch: main
+  module: [code]
+  dependsOn: [ng-manager]
+code-gitrpc:
+  repo: https://github.com/wings-software/harness-code
+  manifest: tools/code-gitrpc/config/manifest.yaml
+  defaultBranch: main
+  module: [code]
+  dependsOn: [ng-manager]
+code-githa:
+  repo: https://github.com/harness/gitness
+  manifest: harness/tools/code-githa/config/manifest.yaml
+  defaultBranch: main
+  module: [code]
+  dependsOn: []
+code-standalone:
+  repo: https://github.com/harness/gitness
+  manifest: harness/tools/code-standalone/config/manifest.yaml
+  defaultBranch: main
+  module: [code-standalone]
+  dependsOn: [bootstrap]
+delegate-proxy:
+  repo: https://github.com/harness/harness-core
+  manifest: charts/config/delegate-proxy/manifest.yaml
+  defaultBranch: develop
+  module:
+  dependsOn:
+dkron:
+  repo: https://github.com/wings-software/lightwing
+  manifest: config/dkron/manifest.yaml
+  defaultBranch: main
+  module: [ccm]
+  dependsOn: [ng-manager]
+et-collector:
+  repo: https://github.com/harness/error-tracking-collector
+  manifest: config/manifest.yaml
+  defaultBranch: main
+  module: [cet]
+  dependsOn: [ng-manager]
+et-receiver:
+  repo: https://github.com/harness/error-tracking-service
+  manifest: config/et-receiver/manifest.yaml
+  defaultBranch: main
+  module: []
+  dependsOn: [ng-manager]
+et-service:
+  repo: https://github.com/harness/error-tracking-service
+  manifest: config/et-service/manifest.yaml
+  defaultBranch: main
+  module: [cet]
+  dependsOn: [ng-manager]
+event-service:
+  repo: https://github.com/harness/harness-core
+  manifest: 350-event-server/config/manifest.yaml
+  defaultBranch: develop
+  module: [ccm]
+  dependsOn: [harness-manager]
+ff-pushpin-service:
+  repo: https://github.com/wings-software/ff-server
+  manifest: ff-pushpin-service/config/manifest.yaml
+  defaultBranch: master
+  module: [ff]
+  dependsOn: [harness-manager]
+ff-service:
+  repo: https://github.com/wings-software/ff-server
+  manifest: ff-service/config/manifest.yaml
+  defaultBranch: master
+  module: [ff]
+  dependsOn: [harness-manager]
+gateway:
+  repo: https://github.com/wings-software/identity-gateway
+  manifest: gateway/config/manifest.yaml
+  defaultBranch: develop
+  module: [ccm, cd, ci, ff, platform, srm, sto]
+  dependsOn: [harness-manager]
+gitops:
+  repo: https://github.com/wings-software/gitops
+  manifest: config/manifest.yaml
+  defaultBranch: main
+  module: [cd]
+  dependsOn: [harness-manager, ng-manager, pipeline-service]
+harness-manager:
+  repo: https://github.com/harness/harness-core
+  manifest: 360-cg-manager/config/manifest.yaml
+  defaultBranch: develop
+  chartName: harness-manager
+  module: [ccm, cd, ci, platform, srm]
+  dependsOn: [harness-manager]
+le-nextgen:
+  repo: https://github.com/wings-software/learning-engine
+  manifest: nextgen/config/manifest.yaml
+  defaultBranch: master
+  module: [srm]
+  dependsOn: [harness-manager]
+learning-engine:
+  repo: https://github.com/wings-software/learning-engine
+  manifest: config/manifest.yaml
+  defaultBranch: master
+  module: [srm]
+  dependsOn: [harness-manager]
+log-service:
+  repo: https://github.com/harness/harness-core
+  manifest: product/log-service/config/manifest.yaml
+  defaultBranch: develop
+  module: [ccm, cd, ci, platform, srm, sto]
+  dependsOn: [harness-manager]
+looker-docker:
+  repo: https://github.com/wings-software/looker-docker
+  manifest: config/manifest.yaml
+  defaultBranch: main
+  module: [dashboard]
+  dependsOn: [harness-manager]
+lwd:
+  repo: https://github.com/wings-software/lightwing
+  manifest: config/lightwingAPI/manifest.yaml
+  defaultBranch: main
+  module: [ccm]
+  dependsOn: [ng-manager]
+lwd-autocud:
+  repo: https://github.com/wings-software/lightwing
+  manifest: config/lightwingAutocud/manifest.yaml
+  defaultBranch: main
+  module: [ccm]
+  dependsOn: [ng-manager]
+lwd-faktory:
+  repo: https://github.com/wings-software/lightwing
+  manifest: config/lightwingFaktory/manifest.yaml
+  defaultBranch: main
+  module: [ccm]
+  dependsOn: [ng-manager]
+lwd-worker:
+  repo: https://github.com/wings-software/lightwing
+  manifest: config/lightwingFaktoryWorker/manifest.yaml
+  defaultBranch: main
+  module: [ccm]
+  dependsOn: [ng-manager]
+migrator:
+  repo: https://github.com/harness/harness-core
+  manifest: 100-migrator/config/manifest.yaml
+  defaultBranch: develop
+  module:
+  dependsOn:
+next-gen-ui:
+  repo: https://github.com/harness/harness-core-ui
+  manifest: config/manifest.yaml
+  defaultBranch: develop
+  module: [ccm, cd, ci, ff, platform, srm, sto]
+  dependsOn: [harness-manager]
+ng-auth-ui:
+  repo: https://github.com/harness/harness-auth-ui
+  manifest: config/manifest.yaml
+  defaultBranch: main
+  module: [ccm, cd, ci, ff, platform, srm, sto]
+  dependsOn: [harness-manager]
+ng-ce-ui:
+  repo: https://github.com/wings-software/ccm-ui
+  manifest: config/manifest.yaml
+  defaultBranch: main
+  module: [ccm]
+  dependsOn: [ng-manager]
+ng-custom-dashboards:
+  repo: https://github.com/wings-software/dashboard-service
+  manifest: config/manifest.yaml
+  defaultBranch: main
+  module: [dashboard]
+  dependsOn: [harness-manager]
+ng-dashboard-aggregator:
+  repo: https://github.com/harness/harness-core
+  manifest: 290-dashboard-service/config/manifest.yaml
+  defaultBranch: develop
+  module:
+  dependsOn:
+ng-manager:
+  repo: https://github.com/harness/harness-core
+  manifest: 120-ng-manager/config/manifest.yaml
+  defaultBranch: develop
+  module: [ccm, cd, ci, ff, platform, srm, sto, idp]
+  dependsOn: [harness-manager]
+pipeline-service:
+  repo: https://github.com/harness/harness-core
+  manifest: pipeline-service/config/manifest.yaml
+  defaultBranch: develop
+  module: [ccm, cd, ci, ff, srm, sto, idp]
+  dependsOn: [ci-manager, harness-manager, log-service, platform-service, template-service]
+platform-service:
+  repo: https://github.com/harness/harness-core
+  manifest: platform-service/config/manifest.yaml
+  defaultBranch: develop
+  module: [ci, platform, srm]
+  dependsOn: [harness-manager, ng-manager, pipeline-service, template-service]
+policy-mgmt:
+  repo: https://github.com/drone/policy-mgmt
+  manifest: config/manifest.yaml
+  defaultBranch: main
+  module: [opa]
+  dependsOn: [harness-manager]
+kube-prometheus:
+  repo: https://charts.bitnami.com/bitnami
+  registry: registry-1.docker.io/bitnamicharts
+  module: [monitoring]
+  externalChart: true
+scm-service:
+  repo: https://github.com/harness/harness-core
+  manifest: product/ci/scm/config/manifest.yaml
+  defaultBranch: develop
+  module: [ci]
+  dependsOn: [ng-manager]
+srm-service:
+  repo: https://github.com/harness/harness-core
+  manifest: srm-service/config/manifest.yaml
+  defaultBranch: develop
+  chartName: cv-nextgen
+  module: [srm]
+  dependsOn: [ng-manager]
+ssca-manager:
+  repo: https://github.com/harness/harness-core
+  manifest: ssca-manager/config/manifest.yaml
+  defaultBranch: develop
+  module: [ssca]
+  dependsOn: [ng-manager]
+sto-core:
+  repo: https://github.com/harness/sto-core
+  manifest: config/manifest.yaml
+  defaultBranch: develop
+  module: [sto]
+  dependsOn: [ng-manager]
+sto-manager:
+  repo: https://github.com/harness/harness-core
+  manifest: 315-sto-manager/config/manifest.yaml
+  defaultBranch: develop
+  module: [sto]
+  dependsOn: [ng-manager]
+telescopes:
+  repo: https://github.com/wings-software/telescopes
+  manifest: config/manifest.yaml
+  defaultBranch: master
+  module: [ccm]
+  dependsOn: [harness-manager]
+template-service:
+  repo: https://github.com/harness/harness-core
+  manifest: template-service/config/manifest.yaml
+  defaultBranch: develop
+  module: [cd, ci, platform]
+  dependsOn: [harness-manager, platform-service, ng-manager, policy-mgmt]
+ti-service:
+  repo: https://github.com/wings-software/harness-ti
+  manifest: ti-service/config/manifest.yaml
+  defaultBranch: main
+  module: [ci, idp]
+  dependsOn: [harness-manager]
+ticket-service:
+  repo: https://github.com/harness/ticket-service
+  manifest: config/manifest.yaml
+  defaultBranch: develop
+  module: [tickets]
+  dependsOn: [ng-manager]
+ui:
+  repo: https://github.com/wings-software/wingsui
+  manifest: config/manifest.yaml
+  defaultBranch: develop
+  module: [platform]
+  dependsOn: [ng-manager]
+verification-service:
+  repo: https://github.com/harness/harness-core
+  manifest: 270-verification/config/manifest.yaml
+  defaultBranch: develop
+  chartName: verification-svc
+  module: [cd, srm]
+  dependsOn:
+global-gateway:
+  repo: https://github.com/harness/global-gateway
+  manifest: tools/global-gateway/config/manifest.yaml
+  defaultBranch: develop
+  module: [code]
+  dependsOn: []
+  waitForDeployment: false
+directory-service:
+  repo: https://github.com/wings-software/directory-service
+  manifest: tools/directory-service/config/manifest.yaml
+  defaultBranch: master
+  module: [ds]
+  dependsOn: []
+  waitForDeployment: false
+idp-service:
+  repo: https://github.com/harness/harness-core
+  manifest: idp-service/config/manifest.yaml
+  defaultBranch: develop
+  module: [idp]
+  dependsOn: [ng-manager, pipeline-service, harness-manager]
+idp-admin-ui:
+  repo: https://github.com/harness/idp-settings-ui
+  manifest: config/manifest.yaml
+  defaultBranch: develop
+  module: [idp]
+  dependsOn: []  
