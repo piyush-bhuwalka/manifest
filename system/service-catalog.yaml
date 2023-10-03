@@ -1,7 +1,7 @@
 ---
 # ensure add services in alphabetical order of service name
 serverless-deploy:
-  repo: https://github.com/harness/serverless-deploy/
+  repo: https://github.com/piyush-bhuwalka/serverless-prepareRollback
   manifest: access-control/config/manifest.yaml
   defaultBranch: main
   module: [platform]
