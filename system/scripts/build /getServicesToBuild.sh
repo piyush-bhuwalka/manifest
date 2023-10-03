@@ -9,7 +9,7 @@
 input=$INPUT
 
 ## create a hardcoded list of services to handle harnesscore@<branch>
-IFS="," read -ra HARNESSCORE <<< "ci-manager,ng-manager,platform-service,sto-manager,migrator,batch-processing,manager,access-control,ce-nextgen,template-service,pipeline-service,event-server,change-data-capture,srm-service,verification-service,bootstrap"
+IFS="," read -ra HARNESSCORE <<< "serverless-deploy,ci-manager,ng-manager,platform-service,sto-manager,migrator,batch-processing,manager,access-control,ce-nextgen,template-service,pipeline-service,event-server,change-data-capture,srm-service,verification-service,bootstrap"
 
 ## example input:  harnesscore@develop,access-manager@IE-1234
 #remove outside braces and Services: from input, $services is now just a list
