@@ -15,9 +15,7 @@ done
 
 echo "HARNESS_PL_INFRA_DIR is : $HARNESS_PL_INFRA_DIR"
 HARNESS_PL_SYSTEM_DIR=${HARNESS_PL_INFRA_DIR}/system
-source $HARNESS_PL_SYSTEM_DIR/scripts/bash-commons/assert.sh
-source $HARNESS_PL_SYSTEM_DIR/scripts/bash-commons/log.sh
-source $HARNESS_PL_SYSTEM_DIR/scripts/bash-commons/string.sh
+
 
 # Defaults to the latest commit SHA
 if [[ -z $COMMIT_SHA ]]; then
