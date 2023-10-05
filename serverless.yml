@@ -16,6 +16,7 @@ functions:
       - httpApi:
           path: /time
           method: get
+    memorySize: 512      
   currentTime62:
     # handler: com.serverless.Handler
     image: <+artifact.image>
