@@ -23,9 +23,7 @@ if [[ -z $COMMIT_SHA ]]; then
 fi
 
 # Get the latest tag for the service
-MATCHING_TAGS=$SERVICE_NAME
-NEWEST_TAG=$(git for-each-ref --sort=-taggerdate --format '%(refname)' refs/tags | grep "$MATCHING_TAGS" | head -n 1)
-LATEST_TAG=${NEWEST_TAG#refs/tags/}
+LATEST_TAG=$(git tag -l | grep -E "^${SERVICE_NAME}/v[0-9]+\.[0-9]+\.[0-9]+" | sort -V | tail -n 1 2>/dev/null)
 echo "LATEST_TAG is: $LATEST_TAG"
 if [[ -z $LATEST_TAG ]]; then
   echo "No tag found, will create new tag"
