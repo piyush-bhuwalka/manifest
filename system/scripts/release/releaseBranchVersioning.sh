@@ -45,7 +45,11 @@ if [ -n "$LATEST_TAG" ]; then
   # Extract the version from the tag (format: servicename_1.0.0)
     VERSION="${LATEST_TAG##*/v}"
     echo "VERSION is $VERSION"
-    if [ "$RELEASE_TYPE" == "MINOR" ]; then
+    if [ "$RELEASE_TYPE" == "MAJOR" ]; then
+        # Normal release: Increment the MAJOR version by 1
+        NEW_VERSION=$($HARNESS_PL_SYSTEM_DIR/scripts/utils/increment_version.sh -M ${VERSION})
+        echo "NEW_VERSION is $NEW_VERSION"
+    elif [ "$RELEASE_TYPE" == "MINOR" ]; then
         # Normal release: Increment the MINOR version by 1
         NEW_VERSION=$($HARNESS_PL_SYSTEM_DIR/scripts/utils/increment_version.sh -m ${VERSION})
         echo "NEW_VERSION is $NEW_VERSION"
@@ -69,7 +73,14 @@ git tag -a "$NEW_TAG" "$COMMIT_SHA" -m "Release $NEW_VERSION"
 # Push the tag
 git push origin "$NEW_TAG"
 
-# Fork a release branch from the tag (replace '.' with '-') only for MINOR Release
+# Fork a release branch from the tag (replace '.' with '-') for MAJOR and MINOR Release
+if [ "$RELEASE_TYPE" == "MAJOR" ]; then
+  export BRANCH_NAME="release/${SERVICE_NAME}_${NEW_VERSION}"
+  git checkout -b "$BRANCH_NAME" "$NEW_TAG"
+  git push origin "$BRANCH_NAME"
+  echo "Release Branch: $BRANCH_NAME"
+fi
+
 if [ "$RELEASE_TYPE" == "MINOR" ]; then
   export BRANCH_NAME="release/${SERVICE_NAME}_${NEW_VERSION}"
   git checkout -b "$BRANCH_NAME" "$NEW_TAG"
