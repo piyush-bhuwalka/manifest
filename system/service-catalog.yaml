@@ -4,7 +4,7 @@ serverless-prepareRollback:
   repo: https://github.com/piyush-bhuwalka/serverless-prepareRollback
   manifest: access-control/config/manifest.yaml
   defaultBranch: main
-  imagePrefix:serverless-preparerollback
+  imagePrefix: serverless-preparerollback
   module: [platform]
   dependsOn: [harness-manager, ng-manager, platform-service]
 anomaly-detection:
