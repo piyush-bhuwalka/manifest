@@ -10,8 +10,8 @@ website: https://github.com/bitrise-io/steps-amazon-s3-deploy
 source_code_url: https://github.com/bitrise-io/steps-amazon-s3-deploy
 support_url: https://github.com/bitrise-io/steps-amazon-s3-deploy/issues
 published_images:
-- harnessdev/serverlesspreparerollback:1.12.3-linux.amd64
-- harnessdev/serverlesspreparerollback:1.12.3-linux.amd64.1
+- harnessdev/serverless-preparerollback:1.12.3-linux.amd64
+- harnessdev/serverless-preparerollback:1.12.3-linux.amd64.1
 published_at: 2015-09-08T16:23:32.708148287+02:00
 source:
   git: https://github.com/bitrise-io/steps-amazon-s3-deploy.git
