@@ -9,7 +9,7 @@ provider:
 #   artifact: <+artifact.path>  
 
 functions:
-  currentTime61:
+  {{ .Values.functionName }}:
     # handler: com.serverless.Handler
     image: <+artifact.image>
     events:
