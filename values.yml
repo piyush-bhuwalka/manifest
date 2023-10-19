@@ -1,1 +1,2 @@
 serviceName: <+pipeline.variables.serviceName>
+functionName: currentTime62
