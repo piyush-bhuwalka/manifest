@@ -1,25 +1,25 @@
-service: newcheckstrylocallyef
+service: {{ .Values.serviceName }}
 frameworkVersion: '3.30.1'
 
 provider:
   name: aws
   runtime: java8
-  stackName: custom-stack
 
 # package:
 #   artifact: <+artifact.path>  
 
 functions:
-  currentTime160:
-    handler: com.serverless.Handler
-    # image: <+artifact.image>
+  currentTime61:
+    # handler: com.serverless.Handler
+    image: <+artifact.image>
     events:
       - httpApi:
           path: /time
           method: get
-  currentTime1613:
-    handler: com.serverless.Handler
-    # image: <+artifact.image>
+    memorySize: 512      
+  currentTime62:
+    # handler: com.serverless.Handler
+    image: <+artifact.image>
     events:
       - httpApi:
           path: /time1
