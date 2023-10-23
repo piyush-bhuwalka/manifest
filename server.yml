@@ -24,3 +24,10 @@ functions:
       - httpApi:
           path: /time1
           method: get   
+  currentTime65:
+    # handler: com.serverless.Handler
+    image: <+artifact.image>
+    events:
+      - httpApi:
+          path: /time1
+          method: get   
