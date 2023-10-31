@@ -29,5 +29,5 @@ functions:
     image: <+artifact.image>
     events:
       - httpApi:
-          path: /time1
+          path: /time2
           method: get   
