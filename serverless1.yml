@@ -44,7 +44,6 @@ functions:
           method: get        
 
 plugins:
-  - serverless-domain-manager
   - serverless-pseudo-parameters
   - serverless-plugin-log-subscription
   - serverless-mocha-plugin
