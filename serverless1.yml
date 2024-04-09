@@ -1,10 +1,10 @@
-service: newcheckstryterfd43233e
+service: newcheckstryterfe3233e
 
 provider:
   name: aws
   runtime: nodejs18.x
   deploymentBucket:
-    name: sfdasdfsd-asdff
+    name: sfdasdfsd-asdffee
     blockPublicAccess: true
   deploymentPrefix: serverless
   
