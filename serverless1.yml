@@ -9,18 +9,6 @@ provider:
   deploymentPrefix: serverless
   
 package:
-  include:
-    - serverless1.yml
-  exclude:
-    - .serverless/**
-    - .vscode/**
-    - env/**
-    - .eslintignore
-    - .eslintrc.js
-    - .gitignore
-    - .nvmrc
-    - Jenkinsfile_CI
-    - "**/venv/**"
   artifact: <+artifact.path>  
 
 functions:
