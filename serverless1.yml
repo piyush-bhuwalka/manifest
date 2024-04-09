@@ -49,6 +49,5 @@ plugins:
   - serverless-plugin-log-subscription
   - serverless-mocha-plugin
   - serverless-associate-waf
-  - serverless-offline
   - serverless-deployment-bucket
           
