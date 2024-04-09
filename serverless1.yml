@@ -1,4 +1,4 @@
-service: newcheckstryterfd33233e
+service: newcheckstryterfd43233e
 
 provider:
   name: aws
@@ -26,8 +26,5 @@ functions:
     events:
       - httpApi:
           path: /time1
-          method: get        
-
-plugins:
-  - serverless-deployment-bucket
+          method: get
           
