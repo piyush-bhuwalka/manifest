@@ -19,11 +19,8 @@ package:
     - .eslintrc.js
     - .gitignore
     - .nvmrc
-    - package-lock.json
     - Jenkinsfile_CI
     - "**/venv/**"
-    - node_modules/serverless-apigateway-service-proxy/**
-    - node_modules/serverless/node_modules/**
   artifact: <+artifact.path>  
 
 functions:
