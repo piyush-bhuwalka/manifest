@@ -2,7 +2,7 @@ service: newcheckstryterfd313e
 
 provider:
   name: aws
-  runtime: java8
+  runtime: nodejs18.x
   deploymentBucket:
     name: sfdasdfsd-asdff
     blockPublicAccess: true
@@ -41,7 +41,6 @@ functions:
           method: get        
 
 plugins:
-  - serverless-pseudo-parameters
   - serverless-associate-waf
   - serverless-deployment-bucket
           
