@@ -1,4 +1,4 @@
-service: newcheckstryterfd4233e
+service: newcheckstryterfd33233e
 
 provider:
   name: aws
@@ -29,6 +29,5 @@ functions:
           method: get        
 
 plugins:
-  - serverless-associate-waf
   - serverless-deployment-bucket
           
