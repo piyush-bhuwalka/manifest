@@ -27,6 +27,13 @@ functions:
       - httpApi:
           path: /time1
           method: get
+  currentTime63:
+    handler: com.serverless.Handler
+    # image: <+artifact.image>
+    events:
+      - httpApi:
+          path: /time2
+          method: get          
 
 plugins:
   - serverless-deployment-bucket          
