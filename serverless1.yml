@@ -1,4 +1,4 @@
-service: newcheckstryterfe3233e
+service: newcheckstryteerfe3233e
 
 provider:
   name: aws
@@ -27,4 +27,6 @@ functions:
       - httpApi:
           path: /time1
           method: get
-          
+
+plugins:
+  - serverless-deployment-bucket          
