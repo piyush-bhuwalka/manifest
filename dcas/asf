@@ -1,6 +1,6 @@
 ---
 applications:
-- name: APP-ONE
+- name: APP-ONE-TWO
   instances: 1
   memory: 250M
   routes:
