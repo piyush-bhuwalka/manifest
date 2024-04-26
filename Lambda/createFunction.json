@@ -2,5 +2,13 @@
    "runtime": "nodejs16.x",
    "functionName": "auto-lambda-new-change7",
    "handler": "handler.hello",
-   "role": "arn:aws:iam::806630305776:role/pluginroletestcf"
+   "role": "arn:aws:iam::806630305776:role/pluginroletestcf",
+    "environment": {
+        "variables": {
+            "MangoApiClientSettings__BaseAddress": "https://mango-api-int.development.paylease.com",
+            "MangoApiClientSettings__BaseAddress1": "https://mango-api-int.development.paylease.com1",
+            "MangoApiClientSettings__BaseAddress2": "https://mango-api-int.development.paylease.com2",
+            "abcd": "<+serviceVariables.abcd>"
+        }
+    }
 }
