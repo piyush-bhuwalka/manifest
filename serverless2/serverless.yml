@@ -29,4 +29,8 @@ functions:
     events:
       - httpApi:
           path: /time2
-          method: get             
+          method: get     
+          
+plugins:
+  - serverless-deployment-bucket    
+          
