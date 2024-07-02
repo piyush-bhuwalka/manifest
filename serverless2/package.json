@@ -16,8 +16,7 @@
     "url": "https://github.com/harness/serverless-yaml-files/issues"
   },
   "dependencies": {
-    "moment": "latest",
-    "serverless" : "3.30.1"
+    "moment": "latest"
   },
   "homepage": "https://github.com/harness/serverless-yaml-files#readme",
   "devDependencies": {
