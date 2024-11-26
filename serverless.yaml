@@ -3,3 +3,19 @@ service:
   identifier: remoteK8s
   orgIdentifier: default
   projectIdentifier: CDProjects
+  serviceDefinition:
+    spec:
+      release:
+        name: release-<+INFRA_KEY_SHORT_ID>
+      artifacts:
+        primary:
+          primaryArtifactRef: <+input>
+          sources:
+            - spec:
+                connectorRef: <+input>
+                imagePath: <+input>
+                tag: <+input>
+                digest: ""
+              identifier: fsad
+              type: DockerRegistry
+    type: Kubernetes
