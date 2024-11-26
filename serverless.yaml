@@ -18,4 +18,14 @@ service:
                 digest: ""
               identifier: fsad
               type: DockerRegistry
+        sidecars:
+          - sidecar:
+              spec:
+                connectorRef: cdplayaws
+                imagePath: helm-test-chart
+                tag: 0.1.0
+                digest: ""
+                region: us-east-1
+              identifier: fsda
+              type: Ecr
     type: Kubernetes
