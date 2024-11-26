@@ -1,0 +1,5 @@
+service:
+  name: remoteK8s
+  identifier: remoteK8s
+  orgIdentifier: default
+  projectIdentifier: CDProjects
