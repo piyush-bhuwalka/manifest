@@ -12,12 +12,13 @@ service:
           primaryArtifactRef: <+input>
           sources:
             - spec:
-                connectorRef: <+input>
+                connectorRef: cdplayaws
                 imagePath: <+input>
                 tag: <+input>
                 digest: ""
-              identifier: fsad
-              type: DockerRegistry
+                region: us-east-1
+              identifier: sdafasdfads
+              type: Ecr
         sidecars:
           - sidecar:
               spec:
