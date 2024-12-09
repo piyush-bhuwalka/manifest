@@ -11,7 +11,7 @@ provider:
 functions:
   currentTime61:
     # handler: com.serverless.Handler
-    image: <+artifact.image>
+    image: <+sidecar.artifact.second>
     events:
       - httpApi:
           path: /time
@@ -19,7 +19,7 @@ functions:
     memorySize: 512      
   currentTime62:
     # handler: com.serverless.Handler
-    image: <+artifact.image>
+    image: <+sidecar.artifact.second>
     events:
       - httpApi:
           path: /time1
