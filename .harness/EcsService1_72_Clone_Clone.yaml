@@ -1,0 +1,71 @@
+---
+service:
+  serviceDefinition:
+    type: "ECS"
+    spec:
+      manifests:
+      - manifest:
+          identifier: "taskDef"
+          type: "EcsTaskDefinition"
+          spec:
+            store:
+              type: "Github"
+              spec:
+                connectorRef: "PipelinesNgAutomation"
+                gitFetchType: "Branch"
+                paths:
+                - "/ECS/sample/RegisterTaskDefinitionRequest.yaml"
+                branch: "master"
+      - manifest:
+          identifier: "serviceDef"
+          type: "EcsServiceDefinition"
+          spec:
+            store:
+              type: "Github"
+              spec:
+                connectorRef: "PipelinesNgAutomation"
+                gitFetchType: "Branch"
+                paths:
+                - "ECS/sample/CreateServiceRequest.yaml"
+                branch: "master"
+      - manifest:
+          identifier: "Scaling"
+          type: "EcsScalingPolicyDefinition"
+          spec:
+            store:
+              type: "Github"
+              spec:
+                connectorRef: "PipelinesNgAutomation"
+                gitFetchType: "Branch"
+                paths:
+                - "ECS/sample/PutScalingPolicyRequest.yaml"
+                branch: "master"
+      - manifest:
+          identifier: "Scalable"
+          type: "EcsScalableTargetDefinition"
+          spec:
+            store:
+              type: "Github"
+              spec:
+                connectorRef: "PipelinesNgAutomation"
+                gitFetchType: "Branch"
+                paths:
+                - "ECS/sample/RegisterScalableTargetRequest.yaml"
+                branch: "master"
+      artifacts:
+        primary:
+          primaryArtifactRef: "artifact"
+          sources:
+          - spec:
+              connectorRef: "qaset"
+              imagePath: "todolist"
+              tag: "latest"
+              region: "us-east-1"
+            identifier: "artifact"
+            type: "Ecr"
+  orgIdentifier: "default"
+  projectIdentifier: "CDProjects"
+  description: ""
+  tags: {}
+  identifier: "EcsService1_72_Clone_Clone"
+  name: "EcsService1_72 - Clone - Clone"
