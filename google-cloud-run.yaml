@@ -1,0 +1,12 @@
+apiVersion: run.googleapis.com/v1
+kind: Job
+metadata:
+  name: job-quickstart
+spec:
+  template:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: job-quickstart
+            image: us-central1-docker.pkg.dev/product-mngt-play/cloud-run-source-deploy/job-quickstart@sha256:0736bdaf6c5956f93010bc9bad6cba083a91fe2a6093954c8ad4d6dabad6dd72
